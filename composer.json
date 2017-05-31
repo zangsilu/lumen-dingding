@@ -6,8 +6,15 @@
             "email": "liugj@boqii.com"
         }
         ],
+                    "repositories": [
+                    {   
+                        "type": "vcs",
+                        "url": "https://github.com/liugj/helpers"
+                    }   
+                                                                        ], 
         "require": {
-            "guzzlehttp/guzzle": "^6.2"
+            "guzzlehttp/guzzle": "^6.2",
+            "liugj/helpers": "dev-master"
         },
         "require-dev": {
             "friendsofphp/php-cs-fixer": "^2.3",

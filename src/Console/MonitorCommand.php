@@ -21,7 +21,7 @@ class MonitorCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'ding:notice {model}';
+    protected $signature = 'ding:monitor {model}';
 
     /**
      * The console command description.

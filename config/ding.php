@@ -10,5 +10,5 @@
  */
 
 return [
-    'access_token' => '',
+    'access_token' => env('DINGDING_ACCESS_TOKEN',''),
 ];
