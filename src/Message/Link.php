@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the openapi package.
+ * This file is part of the lumen dingding package.
  *
  * (c) liugj <liugj@boqii.com>
  *
@@ -74,7 +74,7 @@ class Link extends Message
      *
      * @return mixed
      */
-    public function __construct(sting $text, string $title, string $picUrl, string $messageUrl)
+    public function __construct(string $text, string $title, string $picUrl, string $messageUrl)
     {
         parent :: __construct('link');
         $this->setTitle($title)->setText($text)->setPicUrl($picUrl)->setMessageUrl($messageUrl);

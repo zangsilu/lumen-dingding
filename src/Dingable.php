@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the openapi package.
+ * This file is part of the lumen dingding package.
  *
  * (c) liugj <liugj@boqii.com>
  *
@@ -17,20 +17,17 @@ use Liugj\DingDing\Contracts\Dinger as DingerContract;
 class Dingable implements DingableContract
 {
     /**
-     * content 
-     * 
+     * content.
+     *
      * @var mixed
-     * @access public
      */
     public $content;
 
     /**
-     * __construct 
-     * 
-     * @param string $content 
-     * 
-     * @access public
-     * 
+     * __construct.
+     *
+     * @param string $content
+     *
      * @return mixed
      */
     public function __construct(string $content)
@@ -39,12 +36,10 @@ class Dingable implements DingableContract
     }
 
     /**
-     * send 
-     * 
-     * @param DingerContract $dinger 
-     * 
-     * @access public
-     * 
+     * send.
+     *
+     * @param DingerContract $dinger
+     *
      * @return mixed
      */
     public function send(DingerContract $dinger)

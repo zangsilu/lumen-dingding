@@ -11,6 +11,7 @@
         },
         "require-dev": {
             "friendsofphp/php-cs-fixer": "^2.3",
+            "phpunit/phpunit": "~5.0",
             "sllh/php-cs-fixer-styleci-bridge": "dev-master"
         },
         "autoload": {

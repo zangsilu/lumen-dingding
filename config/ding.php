@@ -9,9 +9,6 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Liugj\DingDing\Contracts;
-
-interface Dingable
-{
-    public function send(Dinger $dinger);
-}
+return [
+    'access_token' => '',
+];

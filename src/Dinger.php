@@ -34,7 +34,7 @@ class Dinger implements DingerContract
     {
         $default = [
                   'timeout' => 5,
-                  'base_uri' => 'https://oapi.dingtalk.com/robot/send?',
+                  'base_uri' => 'https://oapi.dingtalk.com/',
                   ];
         $this->options = $options + $default;
     }
@@ -48,11 +48,20 @@ class Dinger implements DingerContract
      */
     public function send(string $message)
     {
-        return (new GuzzleHttpClient($this->options))->request(
-        'post',
-        '?access_token'. $this->options['access_token'],
-        ['body' => $message, 'headers' => ['Content-Type' => 'application/json;charset=utf-8']]
-        );
+        $response = (new GuzzleHttpClient($this->options))->request(
+              'post',
+              '/robot/send?access_token='. $this->options['access_token'],
+              ['body' => $message, 'headers' => ['Content-Type' => 'application/json;charset=utf-8']]
+             );
+        if ($response->getStatusCode() != 200) {
+            throw new \Exception($response->getReasonPhrase(), $response->getStatusCode());
+        }
+        $json = json_decode((string) $response->getBody());
+        if ($json->errcode != 0) {
+            throw new \Exception($json->errmsg, $json->errcode);
+        }
+
+        return $json->errcode;
     }
 
     /**

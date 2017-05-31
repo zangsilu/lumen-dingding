@@ -26,17 +26,15 @@ class DingServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('dinger', function ($app) {
-                $config = $app->make('config')->get('ding');
+            $config = $app->make('config')->get('ding');
 
-                return new Dinger($config);
-                });
+            return new Dinger($config);
+        });
         if ($this->app->runningInConsole()) {
             $this->commands([
                     MonitorCommand::class,
-            ]); 
-
-        }   
-
+            ]);
+        }
     }
 
     public function provides()

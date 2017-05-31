@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the openapi package.
+ * This file is part of the lumen dingding package.
  *
  * (c) liugj <liugj@boqii.com>
  *
@@ -13,7 +13,7 @@ namespace Liugj\DingDing\Message;
 
 use Liugj\DingDing\Message;
 
-class Markdown extends Message
+class MarkDown extends Message
 {
     /**
      * title.
@@ -31,12 +31,12 @@ class Markdown extends Message
     /**
      * __construct.
      *
-     * @param sting  $title
+     * @param string $title
      * @param string $text
      *
      * @return mixed
      */
-    public function __construct(sting $title, string $text)
+    public function __construct(string $title, string $text)
     {
         parent :: __construct('markdown');
         $this->setTitle($title)->setText($text);
