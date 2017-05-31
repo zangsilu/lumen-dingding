@@ -1,0 +1,21 @@
+{
+    "name": "liugj/lumen-dingding",
+        "authors": [
+        {
+            "name": "liugj",
+            "email": "liugj@boqii.com"
+        }
+        ],
+        "require": {
+            "guzzlehttp/guzzle": "^6.2"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.3",
+            "sllh/php-cs-fixer-styleci-bridge": "dev-master"
+        },
+        "autoload": {
+            "psr-4": {
+                "Liugj\\DingDing\\": "src/"
+            }
+        }
+}
