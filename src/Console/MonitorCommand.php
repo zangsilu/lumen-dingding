@@ -12,7 +12,7 @@
 namespace Liugj\DingDing\Console;
 
 use Illuminate\Console\Command;
-use Liugj\DingDing\Facedes\Dinger;
+use Liugj\DingDing\Facades\Ding;
 
 class MonitorCommand extends Command
 {
@@ -21,7 +21,7 @@ class MonitorCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'ding:monitor {model}';
+    protected $signature = 'ding:monitor {filename}';
 
     /**
      * The console command description.
@@ -37,8 +37,10 @@ class MonitorCommand extends Command
      */
     public function handle()
     {
-        $class = $this->argument('model');
-        $model = new $class();
-        Dinger :: sendText($model);
+        $filename = $this->argument('filename');
+        $seekfile = sprintf('%s.seek', $filename);
+        $content  = \Liugj\Helpers\file_inc($filename, $seekfile);
+
+        Ding :: sendText($content, []);
     }
 }

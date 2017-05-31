@@ -11,6 +11,8 @@
 
 namespace Liugj\DingDing\Facades;
 
+use Illuminate\Support\Facades\Facade;
+
 class Ding extends Facade
 {
     protected static function getFacadeAccessor()
