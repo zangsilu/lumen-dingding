@@ -30,6 +30,7 @@ class DingServiceProvider extends ServiceProvider
 
             return new Dinger($config);
         });
+
         if ($this->app->runningInConsole()) {
             $this->commands([
                     MonitorCommand::class,

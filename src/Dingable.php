@@ -17,22 +17,20 @@ use Liugj\DingDing\Contracts\Dinger as DingerContract;
 class Dingable implements DingableContract
 {
     /**
-     * content.
+     * message.
      *
      * @var mixed
      */
-    public $content;
+    public $message;
 
     /**
      * __construct.
      *
-     * @param string $content
-     *
-     * @return mixed
+     * @param Liugj\DingDing\Message $message
      */
-    public function __construct(string $content)
+    public function __construct(Message $message)
     {
-        $this->content = $content;
+        $this->message = $message;
     }
 
     /**
@@ -44,6 +42,6 @@ class Dingable implements DingableContract
      */
     public function send(DingerContract $dinger)
     {
-        $dinger->send($this->content);
+        return $dinger->send($this->message);
     }
 }
