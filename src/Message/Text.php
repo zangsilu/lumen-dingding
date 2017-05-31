@@ -32,11 +32,11 @@ class Text extends Message
      * __construct.
      *
      * @param string $content
-     * @param array $at
+     * @param array  $at
      *
      * @return mixed
      */
-    public function __construct(string $content, array $at=[])
+    public function __construct(string $content, array $at = [])
     {
         parent :: __construct('text');
         $this->setContent($content)->setAt($at);

@@ -39,7 +39,7 @@ class MonitorCommand extends Command
     {
         $filename = $this->argument('filename');
         $seekfile = sprintf('%s.seek', $filename);
-        $content  = \Liugj\Helpers\file_inc($filename, $seekfile);
+        $content = \Liugj\Helpers\file_inc($filename, $seekfile);
 
         Ding :: sendText($content, []);
     }
