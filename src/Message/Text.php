@@ -31,7 +31,7 @@ class Text extends Message
     /**
      * __construct.
      *
-     * @param sting $content
+     * @param string $content
      * @param array $at
      *
      * @return mixed
