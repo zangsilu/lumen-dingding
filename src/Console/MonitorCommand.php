@@ -41,6 +41,9 @@ class MonitorCommand extends Command
         $seekfile = sprintf('%s.seek', $filename);
         $content = \Liugj\Helpers\file_inc($filename, $seekfile);
 
-        Ding :: sendText($content, []);
+        if ($content) {
+            Ding :: sendText($content, []);
+            info(self ::class . 'send dingding ok.');
+        }
     }
 }
