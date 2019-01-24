@@ -13,6 +13,7 @@ namespace Liugj\DingDing;
 
 use GuzzleHttp\Client as GuzzleHttpClient;
 use Liugj\DingDing\Contracts\Dinger as DingerContract;
+use Illuminate\Support\Facades\Mail;
 
 class Dinger implements DingerContract
 {
