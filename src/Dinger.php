@@ -77,6 +77,22 @@ class Dinger implements DingerContract
     {
         return $this->send(new Message\Text($text, $at, $isAtAll));
     }
+    
+    /**
+     * 发送错误日志邮件
+     * @param string $content
+     * @param string $to
+     */
+    public function sendMail(string $content,string $to)
+    {
+        if ($content) {
+            Mail::raw($content, function ($message) use ($to) {
+                $message->to(explode(',', $to))
+                    ->subject('[ '.env('APP_ENV') .  ' ] [ 报警 ] openapi-petstore错误日志');
+            });
+            info('send php error mail to '. $to . ' ok.');
+        };
+    }
 
     /**
      * sendLink.
